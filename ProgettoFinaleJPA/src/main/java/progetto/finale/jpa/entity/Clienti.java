@@ -1,4 +1,4 @@
-package model;
+package progetto.finale.jpa.entity;
 
 import java.io.Serializable;
 import javax.persistence.*;
