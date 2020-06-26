@@ -15,8 +15,8 @@ public class Appuntamenti implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name="id_appuntamenti")
-	private Integer idAppuntamenti;
+	@Column(name="id_appuntamento")
+	private Integer idAppuntamento;
 
 	@Column(name="costo_visita")
 	private Integer costoVisita;
@@ -27,23 +27,28 @@ public class Appuntamenti implements Serializable {
 
 	//bi-directional many-to-one association to Clienti
 	@ManyToOne
-	@JoinColumn(name="id_cliente")
+	@JoinColumn(name="codice_fiscale")
 	private Clienti clienti;
 
 	//bi-directional many-to-one association to Dipendenti
 	@ManyToOne
-	@JoinColumn(name="id_dipendente")
+	@JoinColumn(name="matricola")
 	private Dipendenti dipendenti;
+
+	//bi-directional many-to-one association to Sede
+	@ManyToOne
+	@JoinColumn(name="id_sede")
+	private Sede sede;
 
 	public Appuntamenti() {
 	}
 
-	public Integer getIdAppuntamenti() {
-		return this.idAppuntamenti;
+	public Integer getIdAppuntamento() {
+		return this.idAppuntamento;
 	}
 
-	public void setIdAppuntamenti(Integer idAppuntamenti) {
-		this.idAppuntamenti = idAppuntamenti;
+	public void setIdAppuntamento(Integer idAppuntamento) {
+		this.idAppuntamento = idAppuntamento;
 	}
 
 	public Integer getCostoVisita() {
@@ -76,6 +81,14 @@ public class Appuntamenti implements Serializable {
 
 	public void setDipendenti(Dipendenti dipendenti) {
 		this.dipendenti = dipendenti;
+	}
+
+	public Sede getSede() {
+		return this.sede;
+	}
+
+	public void setSede(Sede sede) {
+		this.sede = sede;
 	}
 
 }

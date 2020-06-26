@@ -38,8 +38,8 @@ public class ControllerAppuntamentiRest {
 	@PutMapping("/")
 	public @ResponseBody boolean updateAppuntamenti(@RequestBody Appuntamenti appuntamenti) {
 		Appuntamenti app = new Appuntamenti();
-		app = repository.findById(appuntamenti.getIdAppuntamenti()).orElse(new Appuntamenti());
-		if (repository.existsById(app.getIdAppuntamenti())) {
+		app = repository.findById(appuntamenti.getIdAppuntamento()).orElse(new Appuntamenti());
+		if (repository.existsById(app.getIdAppuntamento())) {
 
 			app.setCostoVisita(appuntamenti.getCostoVisita());
 			app.setDataInizio(appuntamenti.getDataInizio());
