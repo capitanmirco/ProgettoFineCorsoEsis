@@ -16,11 +16,10 @@ public class Clienti implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name="id_clienti")
-	private Integer idClienti;
-
 	@Column(name="codice_fiscale")
 	private String codiceFiscale;
+
+	private String citta;
 
 	private String cognome;
 
@@ -29,6 +28,8 @@ public class Clienti implements Serializable {
 	private Date dataNascita;
 
 	private String email;
+
+	private String indirizzo;
 
 	private String nome;
 
@@ -42,20 +43,7 @@ public class Clienti implements Serializable {
 	@OneToMany(mappedBy="clienti")
 	private List<Appuntamenti> appuntamentis;
 
-	//bi-directional many-to-one association to Sede
-	@ManyToOne
-	@JoinColumn(name="id_sede")
-	private Sede sede;
-
 	public Clienti() {
-	}
-
-	public Integer getIdClienti() {
-		return this.idClienti;
-	}
-
-	public void setIdClienti(Integer idClienti) {
-		this.idClienti = idClienti;
 	}
 
 	public String getCodiceFiscale() {
@@ -64,6 +52,14 @@ public class Clienti implements Serializable {
 
 	public void setCodiceFiscale(String codiceFiscale) {
 		this.codiceFiscale = codiceFiscale;
+	}
+
+	public String getCitta() {
+		return this.citta;
+	}
+
+	public void setCitta(String citta) {
+		this.citta = citta;
 	}
 
 	public String getCognome() {
@@ -88,6 +84,14 @@ public class Clienti implements Serializable {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public String getIndirizzo() {
+		return this.indirizzo;
+	}
+
+	public void setIndirizzo(String indirizzo) {
+		this.indirizzo = indirizzo;
 	}
 
 	public String getNome() {
@@ -142,14 +146,6 @@ public class Clienti implements Serializable {
 		appuntamenti.setClienti(null);
 
 		return appuntamenti;
-	}
-
-	public Sede getSede() {
-		return this.sede;
-	}
-
-	public void setSede(Sede sede) {
-		this.sede = sede;
 	}
 
 }

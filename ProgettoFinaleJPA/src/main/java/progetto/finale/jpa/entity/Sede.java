@@ -26,9 +26,9 @@ public class Sede implements Serializable {
 
 	private String nome;
 
-	//bi-directional many-to-one association to Clienti
+	//bi-directional many-to-one association to Appuntamenti
 	@OneToMany(mappedBy="sede")
-	private List<Clienti> clientis;
+	private List<Appuntamenti> appuntamentis;
 
 	//bi-directional many-to-one association to Dipendenti
 	@OneToMany(mappedBy="sede")
@@ -82,26 +82,26 @@ public class Sede implements Serializable {
 		this.nome = nome;
 	}
 
-	public List<Clienti> getClientis() {
-		return this.clientis;
+	public List<Appuntamenti> getAppuntamentis() {
+		return this.appuntamentis;
 	}
 
-	public void setClientis(List<Clienti> clientis) {
-		this.clientis = clientis;
+	public void setAppuntamentis(List<Appuntamenti> appuntamentis) {
+		this.appuntamentis = appuntamentis;
 	}
 
-	public Clienti addClienti(Clienti clienti) {
-		getClientis().add(clienti);
-		clienti.setSede(this);
+	public Appuntamenti addAppuntamenti(Appuntamenti appuntamenti) {
+		getAppuntamentis().add(appuntamenti);
+		appuntamenti.setSede(this);
 
-		return clienti;
+		return appuntamenti;
 	}
 
-	public Clienti removeClienti(Clienti clienti) {
-		getClientis().remove(clienti);
-		clienti.setSede(null);
+	public Appuntamenti removeAppuntamenti(Appuntamenti appuntamenti) {
+		getAppuntamentis().remove(appuntamenti);
+		appuntamenti.setSede(null);
 
-		return clienti;
+		return appuntamenti;
 	}
 
 	public List<Dipendenti> getDipendentis() {

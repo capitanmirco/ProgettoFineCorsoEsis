@@ -15,11 +15,7 @@ public class Dipendenti implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name="id_dipendenti")
-	private Integer idDipendenti;
-
-	@Column(name="codice_fiscale")
-	private String codiceFiscale;
+	private Integer matricola;
 
 	private String cognome;
 
@@ -47,20 +43,12 @@ public class Dipendenti implements Serializable {
 	public Dipendenti() {
 	}
 
-	public Integer getIdDipendenti() {
-		return this.idDipendenti;
+	public Integer getMatricola() {
+		return this.matricola;
 	}
 
-	public void setIdDipendenti(Integer idDipendenti) {
-		this.idDipendenti = idDipendenti;
-	}
-
-	public String getCodiceFiscale() {
-		return this.codiceFiscale;
-	}
-
-	public void setCodiceFiscale(String codiceFiscale) {
-		this.codiceFiscale = codiceFiscale;
+	public void setMatricola(Integer matricola) {
+		this.matricola = matricola;
 	}
 
 	public String getCognome() {
