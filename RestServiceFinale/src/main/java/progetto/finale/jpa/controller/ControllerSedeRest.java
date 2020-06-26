@@ -25,7 +25,7 @@ public class ControllerSedeRest {
 	private SedeRepository repository;
 
 
-	@GetMapping("/{idSede}")
+	@GetMapping("/{id}")
 	public @ResponseBody Sede getSedeById(@PathVariable Integer id) {
 		Sede result = null;
 
@@ -54,7 +54,7 @@ public class ControllerSedeRest {
 		return s;
 	}
 
-	@DeleteMapping("/{idSede}")
+	@DeleteMapping("/{id}")
 	public @ResponseBody boolean deleteSede(@PathVariable Integer id) {
 		repository.deleteById(id);
 		boolean result = true;

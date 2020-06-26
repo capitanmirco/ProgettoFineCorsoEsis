@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 import progetto.finale.jpa.entity.Sede; 
 
 @Repository 
-public interface SedeRepository extends JpaRepository{ 
+public interface SedeRepository extends JpaRepository<Sede,Integer>{ 
 
 }
