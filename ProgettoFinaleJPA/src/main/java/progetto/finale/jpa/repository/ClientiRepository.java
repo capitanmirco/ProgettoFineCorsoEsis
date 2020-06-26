@@ -11,6 +11,6 @@ import progetto.finale.jpa.entity.Clienti;
 
 
 @Repository
-public interface ClientiRepository extends JpaRepository<Clienti,Integer> {
+public interface ClientiRepository extends JpaRepository<Clienti,String> {
 
 }
