@@ -51,7 +51,7 @@ public class ControllerAziendaRest {
 
 	}
 
-	@PutMapping("/{id}")
+	@DeleteMapping("/{id}")
 	public @ResponseBody boolean deleteAzienda(@RequestBody Integer id) {
 		repository.deleteById(id);
 		boolean result = true;
