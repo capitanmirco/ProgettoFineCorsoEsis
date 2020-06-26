@@ -25,11 +25,11 @@ public class ControllerSedeRest {
 	private SedeRepository repository;
 
 
-	@GetMapping("/{id}")
-	public @ResponseBody Sede getSedeById(@PathVariable Integer id) {
+	@GetMapping("/{id_sede}")
+	public @ResponseBody Sede getSedeById(@PathVariable Integer id_sede) {
 		Sede result = null;
 
-		result = repository.findById(id).orElse(new Sede());
+		result = repository.findById(id_sede).orElse(new Sede());
 
 		return result;
 	}

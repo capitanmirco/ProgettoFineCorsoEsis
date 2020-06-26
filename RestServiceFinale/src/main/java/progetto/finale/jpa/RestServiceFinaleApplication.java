@@ -9,8 +9,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @Configuration
 @SpringBootApplication
-@EnableJpaRepositories("progetto.finale.jpa.respository")
-@ComponentScan({"progetto.finale.jpa"})
+@EnableJpaRepositories("progetto.finale.jpa.repository")
+@ComponentScan("progetto.finale.jpa")
 @EntityScan("progetto.finale.jpa.entity")
 public class RestServiceFinaleApplication {
 
