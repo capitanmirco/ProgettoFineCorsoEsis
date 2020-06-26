@@ -44,7 +44,7 @@ public class ControllerDipendentiRest {
 	public @ResponseBody Dipendenti updateDipendenti(@RequestBody Dipendenti dipendente) {
 
 		Dipendenti d = new Dipendenti();
-		d = repository.findById(dipendente.getIdDipendenti()).orElse(new Dipendenti());
+		d = repository.findById(dipendente.getMatricola()).orElse(new Dipendenti());
         d.setCognome(dipendente.getCognome()); 
         d.setEmail(dipendente.getEmail()); 
         d.setNome(dipendente.getNome());						
