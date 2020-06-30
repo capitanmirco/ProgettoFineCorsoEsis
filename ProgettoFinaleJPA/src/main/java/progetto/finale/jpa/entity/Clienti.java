@@ -2,6 +2,9 @@ package progetto.finale.jpa.entity;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import java.util.Date;
 import java.util.List;
 
@@ -41,6 +44,7 @@ public class Clienti implements Serializable {
 
 	//bi-directional many-to-one association to Appuntamenti
 	@OneToMany(mappedBy="clienti")
+	@JsonManagedReference
 	private List<Appuntamenti> appuntamentis;
 
 	public Clienti() {
