@@ -2,6 +2,10 @@ package progetto.finale.jpa.entity;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import java.util.List;
 
 
@@ -28,15 +32,18 @@ public class Sede implements Serializable {
 
 	//bi-directional many-to-one association to Appuntamenti
 	@OneToMany(mappedBy="sede")
+	@JsonManagedReference
 	private List<Appuntamenti> appuntamentis;
 
 	//bi-directional many-to-one association to Dipendenti
 	@OneToMany(mappedBy="sede")
+	@JsonManagedReference
 	private List<Dipendenti> dipendentis;
 
 	//bi-directional many-to-one association to Azienda
 	@ManyToOne
 	@JoinColumn(name="partita_iva")
+	@JsonBackReference
 	private Azienda azienda;
 
 	public Sede() {
